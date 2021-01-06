@@ -11,6 +11,7 @@ cc_binary(
   srcs = ["hello-world.cc"],
   deps = [
     ":hello-greet",
-    "//lib/my-lib:hello-time"
+    "//lib/my-lib:hello-time",
+    "@com_github_spdlog//:spdlog",
   ]
 )

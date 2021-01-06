@@ -3,6 +3,8 @@ cc_test(
   srcs = ["my-test.cpp"],
     defines = ["CATCH_CONFIG_MAIN"],
     deps = [
-        "@catch2",
+        "@com_github_catch2//:catch2",
+        "@com_github_fmt//:fmtlib",
+        "@com_github_spdlog//:spdlog",
     ]
 )
