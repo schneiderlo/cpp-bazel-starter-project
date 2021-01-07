@@ -24,3 +24,5 @@ If the target is a rule target, then `path/to/package` is the path to the direct
 
 When referencing targets at the repository root, the package path is empty, just use `//:target-name`. When referencing targets within the same BUILD file, you can even skip the // workspace root identifier and just use `:target-name`.
 
+# Remarks
+- `BUILD` files register targets via making calls to rules. `.bzl` files provide definitions for constants, rules, macros, and functions.
