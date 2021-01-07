@@ -14,10 +14,7 @@ cc_library(
 cc_binary(
   name = "hello-world",
   srcs = ["hello-world.cc"],
-  copts = get_cxx_warnings(
-    warnings_as_errors = True,
-    compiler = "msvc"
-  ),
+  copts = get_cxx_warnings(),
   deps = [
     ":hello-greet",
     "//lib/my-lib:hello-time",

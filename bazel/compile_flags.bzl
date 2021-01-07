@@ -1,12 +1,22 @@
-"""Define flags used during the compilation"""
+"""Define flags used during the compilation
 
-def get_cxx_warnings(warnings_as_errors, compiler):
+TODO(lschneider): Find the way to remove `compiler` and `warnings_as_errors` from this file.
+  At least, `compiler` should be found automatically. `warnings_as_errors` could be set via
+  an environment variable.
+"""
+
+# Compiler used to build the project. It's value can either be "MSVC",
+# "clang" or "gcc".
+compiler = "MSVC"
+
+# A boolean that indicates if warnings are treated as errors.
+# It is better to be strict with warnings from the start. Trying to
+# raise the warning level after the project is underway can be painful.
+warnings_as_errors = True
+
+def get_cxx_warnings():
   """Enable a series of warning used to build the source.
   
-  Args:
-    warnings_as_errors: A boolean that indicates if warnings are treated as errors.
-      It is better to be strict with warnings from the start. Trying to
-      raise the warning level after the project is underway can be painful.
     compiler: String that represent the compiler used to build the source. It's 
       value can either be "msvc", "clang" or "gcc".
   Returns:

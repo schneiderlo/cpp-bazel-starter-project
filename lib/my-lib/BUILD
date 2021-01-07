@@ -8,9 +8,6 @@ cc_library(
   deps = [
     "//legacy/some-lib:some-lib"
   ],
-  copts = get_cxx_warnings(
-    warnings_as_errors = True,
-    compiler = "msvc"
-  ),
+  copts = get_cxx_warnings(),
   visibility = ["//main:__pkg__"]
 )
