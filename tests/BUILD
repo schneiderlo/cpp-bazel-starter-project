@@ -1,6 +1,6 @@
-load("@rules_cc//cc:defs.bzl", "cc_test")
+load("//bazel:cc_wrapper.bzl", "cc_test_wrapper")
 
-cc_test(
+cc_test_wrapper(
   name = "simple-test",
   srcs = ["my-test.cpp"],
     defines = ["CATCH_CONFIG_MAIN"],
