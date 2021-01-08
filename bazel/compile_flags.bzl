@@ -5,9 +5,9 @@ TODO(lschneider): Find the way to remove `compiler` and `warnings_as_errors` fro
   an environment variable.
 """
 
-# Compiler used to build the project. It's value can either be "MSVC",
+# Compiler used to build the project. It's value can either be "msvc",
 # "clang" or "gcc".
-compiler = "MSVC"
+compiler = "msvc"
 
 # A boolean that indicates if warnings are treated as errors.
 # It is better to be strict with warnings from the start. Trying to

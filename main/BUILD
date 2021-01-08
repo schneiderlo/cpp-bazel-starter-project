@@ -1,20 +1,14 @@
-load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
-load("//bazel:compile_flags.bzl", "get_cxx_warnings")
+load("//bazel:cc_wrapper.bzl", "cc_library_wrapper", "cc_binary_wrapper")
 
-cc_library(
+cc_library_wrapper(
   name = "hello-greet",
   srcs = ["hello-greet.cc"],
-  hdrs = ["hello-greet.h"],
-  copts = get_cxx_warnings(
-    warnings_as_errors = True,
-    compiler = "msvc"
-  ),
+  hdrs = ["hello-greet.h"]
 )
 
-cc_binary(
+cc_binary_wrapper(
   name = "hello-world",
   srcs = ["hello-world.cc"],
-  copts = get_cxx_warnings(),
   deps = [
     ":hello-greet",
     "//lib/my-lib:hello-time",
