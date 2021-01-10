@@ -1,6 +1,6 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-# Catch2 is a testing library.
+# External dependency: Catch2 is a testing library.
 http_archive(
     name = "com_github_catch2",
     strip_prefix = "Catch2-2.13.4",
@@ -8,7 +8,7 @@ http_archive(
     sha256 = "e7eb70b3d0ac2ed7dcf14563ad808740c29e628edde99e973adad373a2b5e4df"
 )
 
-# {fmt} is a formatting library. 
+# External dependency: {fmt} is a formatting library. 
 http_archive(
     name = "com_github_fmt",
     strip_prefix = "fmt-7.1.3",
@@ -17,11 +17,22 @@ http_archive(
     build_file = "@//bazel/external:fmtlib.BUILD",
 )
 
-# spdlog is logging library.
+# External dependency: spdlog is logging library.
 http_archive(
     name = "com_github_spdlog",
     strip_prefix = "spdlog-1.8.2",
     urls = ["https://github.com/gabime/spdlog/archive/v1.8.2.tar.gz"],
     sha256 = "e20e6bd8f57e866eaf25a5417f0a38a116e537f1a77ac7b5409ca2b180cec0d5",
     build_file = "@//bazel/external:spdlog.BUILD",
+)
+
+# External dependency: Eigen
+http_archive(
+    name = "com_github_eigen",
+    sha256 = "7985975b787340124786f092b3a07d594b2e9cd53bbfe5f3d9b1daee7d55f56f",
+    strip_prefix = "eigen-3.3.9",
+    urls = [
+        "https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.tar.gz",
+    ],
+    build_file = "@//bazel/external:eigen.BUILD",
 )
