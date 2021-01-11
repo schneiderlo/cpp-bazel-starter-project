@@ -1,13 +1,11 @@
-load("@rules_cc//cc:defs.bzl", "cc_library")
-load("//bazel:compile_flags.bzl", "get_cxx_warnings")
+load("//bazel:cc_wrapper.bzl", "cc_library_wrapper")
 
-cc_library(
+cc_library_wrapper(
   name = "hello-time",
   srcs = ["hello-time.cc"],
   hdrs = ["hello-time.h"],
   deps = [
     "//legacy/some-lib:some-lib"
   ],
-  copts = get_cxx_warnings(),
   visibility = ["//main:__pkg__"]
 )
