@@ -1,8 +1,10 @@
 """External dependencies that can be loaded in WORKSPACE files."""
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 
 def load_external_dependencies():
+  """Load third party dependencies."""
   # Catch2 is a testing library.
   http_archive(
       name = "com_github_catch2",
@@ -36,4 +38,12 @@ def load_external_dependencies():
       urls = ["https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.tar.gz"],
       sha256 = "7985975b787340124786f092b3a07d594b2e9cd53bbfe5f3d9b1daee7d55f56f",
       build_file = "@//bazel/external:eigen.BUILD",
+  )
+
+  # Boost libraries. To be used in 
+
+  git_repository(
+    name = "com_github_nelhage_rules_boost",
+    commit = "910be615d1462253bf8b5874f1256a20acadf24a",
+    remote = "https://github.com/nelhage/rules_boost",
   )

@@ -12,13 +12,14 @@ compiler = "msvc"
 # A boolean that indicates if warnings are treated as errors.
 # It is better to be strict with warnings from the start. Trying to
 # raise the warning level after the project is underway can be painful.
-warnings_as_errors = True
 
-def get_cxx_warnings():
+
+def get_cxx_warnings(warnings_as_errors = True):
   """Enable a series of warning used to build the source.
   
-    compiler: String that represent the compiler used to build the source. It's 
-      value can either be "msvc", "clang" or "gcc".
+  Args:
+    warnings_as_errors: Boolean indicating if warnings must be treated
+      as errors. Default value is true.
   Returns:
     A list of compilation flags.
   """
